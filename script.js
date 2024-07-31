@@ -6,7 +6,7 @@ const websiteNameEl = document.getElementById('website-name');
 const websiteUrlEl = document.getElementById('website-url');
 const bookmarksContainer = document.getElementById('bookmark-container');
 
-let bookmarks = {};
+let bookmarks = [];
 
 // Show Modal, Focus on Input
 function showModal() {
@@ -106,9 +106,9 @@ function fetchBookmarks() {
 
 // Delete Bookmark
 function deleteBookmark(url) {
-  bookmarks.forEach((bookmark, index) => {
+  bookmarks.forEach((bookmark, i) => {
     if (bookmark.url === url) {
-      bookmarks.splice(index, 1);
+      bookmarks.splice(i, 1);
     }
   });
   //   Update bookmarks array in localStorage, re-populate DOM
